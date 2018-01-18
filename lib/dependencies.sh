@@ -139,7 +139,7 @@ npm_rebuild() {
     else
       echo "Installing any new modules (package.json)"
     fi
-    node --max_old_space_size=900 $build_dir/.heroku/node/bin/npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
+    node --max_old_space_size=768 $build_dir/.heroku/node/bin/npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
   else
     echo "Skipping (no package.json)"
   fi
