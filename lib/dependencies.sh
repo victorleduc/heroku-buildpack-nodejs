@@ -121,7 +121,7 @@ npm_node_modules() {
     else
       echo "Installing node modules (package.json)"
     fi
-    node --optimize_for_size --max_old_space_size=768 --gc_interval=100 npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
+    tmp/build/.heroku/node/bin/node --optimize_for_size --max_old_space_size=768 --gc_interval=100 npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
   else
     echo "Skipping (no package.json)"
   fi
@@ -139,7 +139,7 @@ npm_rebuild() {
     else
       echo "Installing any new modules (package.json)"
     fi
-    node --optimize_for_size --max_old_space_size=768 --gc_interval=100 npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
+    tmp/build/.heroku/node/bin/node --optimize_for_size --max_old_space_size=768 --gc_interval=100 npm install --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
   else
     echo "Skipping (no package.json)"
   fi
